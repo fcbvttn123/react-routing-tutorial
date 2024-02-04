@@ -1,20 +1,27 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Home } from './components/Home';
-import { About } from './components/About';
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+import {Vans} from "./pages/Vans"
 
 function App() {
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+      <nav className='bg-orange-50'>
+        <div className='w-11/12 h-20 mx-auto flex items-center justify-between'>
+          <Link className='font-extrabold text-2xl' to="/">#VANLIFE</Link>
+          <Link className='ml-auto mr-6 font-semibold' to="/about">About</Link>
+          <Link className='font-semibold' to="/vans">Vans</Link>
+        </div>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />}/>
+        <Route path="/vans" element={<Vans />}/>
       </Routes>
+      <footer className='bg-zinc-900 h-14 grid place-content-center'>
+        <p className='text-gray-400'>Ⓒ 2022 #VANLIFE</p>
+      </footer>
     </BrowserRouter>
   )
 }
