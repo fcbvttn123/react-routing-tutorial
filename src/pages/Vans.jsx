@@ -1,5 +1,10 @@
-export function Vans() {
+export function Vans({data}) {
     return (
-        <h1>Vans</h1>
+        <div>
+            <img src={data.imageUrl} alt="" />
+            <h2>{data.name}</h2>
+            <p>{data.price}/day</p>
+            <button>{data.type}</button>
+        </div>
     )
 }
