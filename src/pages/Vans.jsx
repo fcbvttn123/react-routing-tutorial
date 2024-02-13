@@ -5,12 +5,19 @@ import { Link } from "react-router-dom";
 export function Vans() {
     const [vans, setVans] = useState([])
     let vanComponents = vans.map(obj => (
-        <div key={obj.id}>
+        <div className="w-1/2 p-2" key={obj.id}>
             <Link to={`/vans/${obj.id}`}>
-                <img src={obj.imageUrl} alt="" />
-                <h2>{obj.name}</h2>
-                <p>{obj.price}/day</p>
-                <button>{obj.type}</button>
+                <img className="rounded-md" src={obj.imageUrl} alt="" />
+                <div className="flex justify-between">
+                    <h2 className="text-2xl font-bold">{obj.name}</h2>
+                    <p className="flex flex-col">
+                        <span className="text-2xl font-bold">{obj.price}</span>
+                        <span>/day</span>
+                    </p>
+                </div>
+                <button className={`${obj.type == "simple" ? "bg-orange-600" : "bg-green-800"} text-orange-100 text-xl font-semibold px-4 py-1 rounded-md`}>
+                    {obj.type}
+                </button>
             </Link>
         </div>
     ))
@@ -29,5 +36,9 @@ export function Vans() {
         setState()
     }, [])
 
-    return vanComponents
+    return (
+        <div className="flex flex-wrap">
+            {vanComponents}
+        </div>
+    )
 }
