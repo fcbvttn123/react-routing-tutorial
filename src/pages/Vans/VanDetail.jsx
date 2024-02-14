@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import "../server"
+import "../../server"
 
 export function VanDetail() {
     const param = useParams()
