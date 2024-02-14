@@ -14,13 +14,15 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/vans" element={<Vans />}/>
-          <Route path="/vans/:id" element={<VanDetail />}/>
-          <Route path="/host" element={<Dashboard />}/>
-          <Route path="/host/income" element={<Income />}/>
-          <Route path="/host/reviews" element={<Reviews />}/>
+            <Route path="/" element={<Home />}/>
+            <Route path="/about" element={<About />}/>
+            <Route path="/vans" element={<Vans />}/>
+            <Route path="/vans/:id" element={<VanDetail />}/>
+
+            <Route path="/host" element={<Dashboard />}>
+              <Route path="/host/income" element={<Income />}/>
+              <Route path="/host/reviews" element={<Reviews />}/>
+            </Route>
         </Route>
       </Routes>
       <footer className='bg-zinc-900 h-14 grid place-content-center'>
