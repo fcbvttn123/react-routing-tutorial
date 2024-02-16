@@ -1,12 +1,23 @@
-import { Link, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 
 export function Host() {
+    let activeLinkStyle = {
+        fontWeight: "bold", 
+        textDecoration: "underline", 
+        color: "#161616"
+    }
     return (
         <>
             <nav className="flex gap-x-4">
-                <Link to="/host">Dashboard</Link>
-                <Link to="/host/income">Income</Link>
-                <Link to="/host/reviews">Reviews</Link>
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host" end>
+                    Dashboard
+                </NavLink>
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/income">
+                    Income
+                </NavLink>
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/reviews">
+                    Reviews
+                </NavLink>
             </nav>
             <Outlet />
         </>
