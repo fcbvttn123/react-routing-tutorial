@@ -15,6 +15,9 @@ export function Host() {
                 <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/income">
                     Income
                 </NavLink>
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/vans">
+                    Vans
+                </NavLink>
                 <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/reviews">
                     Reviews
                 </NavLink>
