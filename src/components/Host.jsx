@@ -9,16 +9,16 @@ export function Host() {
     return (
         <div className="px-4 mb-20">
             <nav className="flex gap-x-4">
-                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host" end>
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="." end>
                     Dashboard
                 </NavLink>
-                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/income">
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="income">
                     Income
                 </NavLink>
-                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/vans">
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="vans">
                     Vans
                 </NavLink>
-                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host/reviews">
+                <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="reviews">
                     Reviews
                 </NavLink>
             </nav>
