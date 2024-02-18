@@ -7,7 +7,7 @@ export function Host() {
         color: "#161616"
     }
     return (
-        <>
+        <div className="px-4 mb-20">
             <nav className="flex gap-x-4">
                 <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="/host" end>
                     Dashboard
@@ -23,6 +23,6 @@ export function Host() {
                 </NavLink>
             </nav>
             <Outlet />
-        </>
+        </div>
     )
 }

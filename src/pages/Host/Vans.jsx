@@ -7,11 +7,13 @@ export function Vans() {
     let vanCards = null
     if(vans) {
         vanCards = vans.map(obj => (
-            <div key={obj.id}>
-                <Link to={`/host/vans/${obj.id}`}>
-                    <img src={obj.imageUrl} alt="" />
-                    <h1>{obj.name}</h1>
-                    <p>${obj.price}/day</p>
+            <div key={obj.id} className="bg-white mb-4 p-4 rounded-lg">
+                <Link to={`/host/vans/${obj.id}`} className="flex items-center gap-x-4">
+                    <img className="w-20 h-20" src={obj.imageUrl} alt="" />
+                    <div>
+                        <h1 className="font-bold">{obj.name}</h1>
+                        <p className="text-slate-400 font-semibold">${obj.price}/day</p>
+                    </div>
                 </Link>
             </div>
         ))
@@ -28,8 +30,8 @@ export function Vans() {
     }, [])
     return (
         <>
-            <h1>Host Van List Page</h1>
-            {vanCards && vanCards}
+            <h1 className="mt-8 mb-4 text-2xl font-semibold">Your listed vans</h1>
+            {vanCards ? vanCards : <p className="mt-8 mb-4 text-2xl font-extrabold">Loading...</p>}
         </>
     )
 }
