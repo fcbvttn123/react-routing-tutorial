@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, Outlet, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 export function VanDetail() {
@@ -32,6 +32,9 @@ export function VanDetail() {
                             <span className="text-black font-bold">${vanDetail.price}</span>/day
                         </p>
                     </div>
+                </div>
+                <div className="mt-4">
+                    <Outlet />
                 </div>
             </div>
         </div>
