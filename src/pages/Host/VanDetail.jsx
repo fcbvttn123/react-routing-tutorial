@@ -37,7 +37,7 @@ export function VanDetail() {
                         </p>
                     </div>
                 </div>
-                <nav className="flex gap-x-4">
+                <nav className="flex gap-x-4 mt-4">
                     <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="." end>
                         Details
                     </NavLink>
@@ -48,8 +48,8 @@ export function VanDetail() {
                         Photos
                     </NavLink>
                 </nav>
-                <div className="mt-4">
-                    <Outlet />
+                <div className="mt-2">
+                    <Outlet context={{vanDetail}}/>
                 </div>
             </div>
         </div>
