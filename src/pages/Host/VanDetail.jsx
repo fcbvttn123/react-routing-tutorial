@@ -1,10 +1,14 @@
-import { Link, Outlet, useParams } from "react-router-dom"
+import { Link, Outlet, useParams, NavLink } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 export function VanDetail() {
     const [vanDetail, setVanDetail] = useState(null)
-    
     let {id} = useParams()
+    let activeLinkStyle = {
+        fontWeight: "bold", 
+        textDecoration: "underline", 
+        color: "#161616"
+    }
 
     async function getVans() {
         let res = await fetch("/api/vans")
@@ -33,6 +37,17 @@ export function VanDetail() {
                         </p>
                     </div>
                 </div>
+                <nav className="flex gap-x-4">
+                    <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="." end>
+                        Details
+                    </NavLink>
+                    <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="price">
+                        Pricing
+                    </NavLink>
+                    <NavLink style={(obj) => obj.isActive ? activeLinkStyle : null} to="photos">
+                        Photos
+                    </NavLink>
+                </nav>
                 <div className="mt-4">
                     <Outlet />
                 </div>
