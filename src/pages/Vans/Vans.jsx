@@ -1,9 +1,13 @@
 import "../../server"
 import { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export function Vans() {
     const [vans, setVans] = useState([])
+    const [searchParams, setSearchParams] = useSearchParams()
+    let typeFilter = searchParams.get("type")
+    console.log(typeFilter)
+
     let vanComponents = vans.map(obj => (
         <div className="w-1/2 p-2" key={obj.id}>
             <Link to={`/vans/${obj.id}`}>
