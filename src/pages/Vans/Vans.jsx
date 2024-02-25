@@ -63,8 +63,16 @@ export function Vans() {
     }, [])
 
     return (
-        <div className="flex flex-wrap">
-            {vanComponents}
+        <div>
+            <div className="flex gap-x-2">
+                <Link to="?type=simple">Simple</Link>
+                <Link to="?type=rugged">Rugged</Link>
+                <Link to="?type=luxury">Luxury</Link>
+                <Link to=".">Clear</Link>
+            </div>
+            <div className="flex flex-wrap">
+                {vanComponents}
+            </div>
         </div>
     )
 }
