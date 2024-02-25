@@ -65,10 +65,15 @@ export function Vans() {
     return (
         <div>
             <div className="flex gap-x-2">
-                <Link to="?type=simple">Simple</Link>
+                {/* <Link to="?type=simple">Simple</Link>
                 <Link to="?type=rugged">Rugged</Link>
                 <Link to="?type=luxury">Luxury</Link>
-                <Link to=".">Clear</Link>
+                <Link to=".">Clear</Link> */}
+
+                <button onClick={() => setSearchParams({type: "simple"})}>Simple</button>
+                <button onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
+                <button onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
+                <button onClick={() => setSearchParams({})}>Clear</button>
             </div>
             <div className="flex flex-wrap">
                 {vanComponents}
