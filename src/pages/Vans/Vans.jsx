@@ -70,10 +70,10 @@ export function Vans() {
                 <Link to="?type=luxury">Luxury</Link>
                 <Link to=".">Clear</Link> */}
 
-                <button onClick={() => setSearchParams({type: "simple"})}>Simple</button>
-                <button onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
-                <button onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
-                <button onClick={() => setSearchParams({})}>Clear</button>
+                <button className={typeFilter == "simple" && "bg-black text-white"} onClick={() => setSearchParams({type: "simple"})}>Simple</button>
+                <button className={typeFilter == "rugged" && "bg-black text-white"} onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
+                <button className={typeFilter == "luxury" && "bg-black text-white"} onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
+                {typeFilter && <button onClick={() => setSearchParams({})}>Clear</button>}
             </div>
             <div className="flex flex-wrap">
                 {vanComponents}
