@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import "../../server"
 
 export function VanDetail() {
@@ -18,5 +18,10 @@ export function VanDetail() {
         }
         printVanDetail(param.id)
     }, [])
-    return <h1>Van Details go here</h1>
+    return (
+        <div>
+            <Link to=".." relative="path" className="underline">Back</Link>
+            <h1>Van Details go here</h1>
+        </div>
+    )
 }
