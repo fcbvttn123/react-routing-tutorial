@@ -12,7 +12,7 @@ export function Vans() {
             return (
                 obj.type.toUpperCase() == typeFilter.toUpperCase() &&
                 <div className="w-1/2 p-2" key={obj.id}>
-                    <Link to={`/vans/${obj.id}`}>
+                    <Link to={obj.id}>
                         <img className="rounded-md" src={obj.imageUrl} alt="" />
                         <div className="flex justify-between">
                             <h2 className="text-2xl font-bold">{obj.name}</h2>

@@ -8,7 +8,7 @@ export function Vans() {
     if(vans) {
         vanCards = vans.map(obj => (
             <div key={obj.id} className="bg-white mb-4 p-4 rounded-lg">
-                <Link to={`/host/vans/${obj.id}`} className="flex items-center gap-x-4">
+                <Link to={obj.id} className="flex items-center gap-x-4">
                     <img className="w-20 h-20" src={obj.imageUrl} alt="" />
                     <div>
                         <h1 className="font-bold">{obj.name}</h1>
