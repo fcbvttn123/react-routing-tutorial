@@ -36,6 +36,8 @@ function App() {
                 <Route path='photos' element={<HostVanPhoto />}/>
               </Route>
             </Route>
+
+            <Route path="*" element={<h1>Page not found</h1>}/>
         </Route>
       </Routes>
     </BrowserRouter>
