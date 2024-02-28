@@ -1,10 +1,11 @@
 import "../../server"
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 export function Vans() {
     const [vans, setVans] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
+
     let typeFilter = searchParams.get("type")
 
     let vanComponents = vans.map(obj => {
@@ -70,9 +71,9 @@ export function Vans() {
                 <Link to="?type=luxury">Luxury</Link>
                 <Link to=".">Clear</Link> */}
 
-                <button className={typeFilter == "simple" && "bg-black text-white"} onClick={() => setSearchParams({type: "simple"})}>Simple</button>
-                <button className={typeFilter == "rugged" && "bg-black text-white"} onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
-                <button className={typeFilter == "luxury" && "bg-black text-white"} onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
+                <button className={typeFilter == "simple" ? "bg-black text-white": null} onClick={() => setSearchParams({type: "simple"})}>Simple</button>
+                <button className={typeFilter == "rugged" ? "bg-black text-white": null} onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
+                <button className={typeFilter == "luxury" ? "bg-black text-white": null} onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
                 {typeFilter && <button onClick={() => setSearchParams({})}>Clear</button>}
             </div>
             <div className="flex flex-wrap">
