@@ -20,7 +20,7 @@ export function VanDetail() {
     }, [])
     return (
         <div>
-            <Link to={`..?${location.state?.search || ""}`} relative="path" className="underline">Back</Link>
+            <Link to={`..?${location.state?.search || ""}`} relative="path" className="underline">Back to all {location.state?.search.split("=")[1] || ""} vans</Link>
             <h1>Van Details go here</h1>
         </div>
     )
